@@ -72,7 +72,9 @@ func getBatteryFiles() ([]string, error) {
 }
 
 func getByPath(path string) (*Battery, error) {
-	b := &Battery{}
+	b := &Battery{
+		Key: filepath.Base(path),
+	}
 	e := ErrPartial{}
 	b.Current, e.Current = readFloat(path, "energy_now")
 	b.Voltage, e.Voltage = readFloat(path, "voltage_now")

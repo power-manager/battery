@@ -76,6 +76,8 @@ func newState(name string) (State, error) {
 
 // Battery type represents a single battery entry information.
 type Battery struct {
+	// Key of battery if exists
+	Key string
 	// Current battery state.
 	State State
 	// Current (momentary) capacity (in mWh).
