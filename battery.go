@@ -24,14 +24,15 @@
 // Gives access to a system independent, typed battery state, capacity, charge and voltage values recalculated as necessary to be returned in mW, mWh or V units.
 //
 // Currently supported systems:
-//  Linux 2.6.39+
-//  OS X 10.10+
-//  Windows XP+
-//  FreeBSD
-//  DragonFlyBSD
-//  NetBSD
-//  OpenBSD
-//  Solaris
+//
+//	Linux 2.6.39+
+//	OS X 10.10+
+//	Windows XP+
+//	FreeBSD
+//	DragonFlyBSD
+//	NetBSD
+//	OpenBSD
+//	Solaris
 package battery
 
 import (
@@ -51,6 +52,7 @@ const (
 	Full
 	Charging
 	Discharging
+	NotCharging
 )
 
 var states = [...]string{
@@ -59,6 +61,7 @@ var states = [...]string{
 	Full:        "Full",
 	Charging:    "Charging",
 	Discharging: "Discharging",
+	NotCharging: "Not charging",
 }
 
 func (s State) String() string {
